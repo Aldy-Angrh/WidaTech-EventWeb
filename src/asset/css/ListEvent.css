@@ -6,8 +6,11 @@
 }
 .listEvent-continer1{
     background-color:#192049;
-    flex: 2;
+    /* flex: 1; */
+    padding-right: 30px;
     height: 100%;
+    padding-left:30px ;
+    padding-top: 12px;
     border-top-right-radius : 20px;
 
 }
@@ -22,7 +25,7 @@
     flex: 4;
     height: 100%;
 }
-h1{
+h2{
     color: white;
 }
 .listEvent-li{
@@ -30,6 +33,11 @@ h1{
 }
 .list-Link{
     color: white;
+}
+.list-text-event{
+    color:#FFF;
+    font-size: medium;
+    font-weight: 700;
 }
 .list-img{
     margin-right: 20px;
@@ -64,8 +72,45 @@ h1{
 
 }
 .list-card{
-    width: 50%;
+    width: 40%;
     background-color: #14162D;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: -13px 14px 26px -4px rgba(0,0,0,0.68);
+-webkit-box-shadow: -13px 14px 26px -4px rgba(0,0,0,0.68);
+-moz-box-shadow: -13px 14px 26px -4px rgba(0,0,0,0.68);
+    margin-left: 10px;
 }
+.list-card-body{
+    background-color: #14162D;
+    border-radius: 20px;
+}
+.container-cardtask{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.img-task{
+    width: 50px;
+    height: 50px;
+}
+.container-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container-linkGd{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #BBB;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 
+    border-radius: 20px;
+}
+.text-gmeet{
+    border-radius: 20px;
+    padding: 5px;
+}

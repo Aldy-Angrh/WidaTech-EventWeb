@@ -1,42 +1,56 @@
 import React from "react";
 import {  useFormik } from "formik";
 import * as Yup from "yup";
+import Form from 'react-bootstrap/Form';
+import { Button } from "./Button";
+import '../asset/css/CreateEvent.css'
+import { bindActionCreators } from "redux";
+import { CreateEvent } from "../action/EventAction";
+import {connect,useDispatch, useSelector} from 'react-redux'
+import { createEvent } from "../action/postSlice";
 
-function CardForm() {
+function CardForm(props) {
+
+  const dispatch = useDispatch();
+const posts = useSelector(state => state.posts.events)
+  console.log("ISI DARI post event", posts);
+  const HandleCrate = ()=>{
+    dispatch(createEvent(formik.values))
+  }
   const formik = useFormik({
     initialValues: {
-      full_name: "",
-      email: "",
-      password: "",
-      confirm_password: ""
+      event_name: "",
+      date: "",
+      start_time: "",
+      end_time:'',
+      desc: ""
     },
     validationSchema: Yup.object({
-      full_name: Yup.string()
-        .min(2, "Mininum 2 characters")
-        .max(15, "Maximum 15 characters")
+      event_name: Yup.string()
         .required("Required!"),
-      email: Yup.string()
-        .email("Invalid email format")
+      date: Yup.string()
         .required("Required!"),
-      password: Yup.string()
-        .min(8, "Minimum 8 characters")
+      start_time: Yup.string()
         .required("Required!"),
-      confirm_password: Yup.string()
-        .oneOf([Yup.ref("password")], "Password's not match")
+      end_time: Yup.string()
+        .required("Required!"),
+      desc: Yup.string()
         .required("Required!")
-    })
+    }),
+    
   });
-  return (
-    <div className="App">
-    <h1>Validation with Formik + Yup</h1>
+  // alert(JSON.stringify(formik.values ))
 
+  return (
+    
+    <div className="card-form">
     <form onSubmit={formik.handleSubmit}>
-      <div>
-        <label>Event Name</label>
-        <input
+      <div className="card-form-container">
+        <label className="label-form">Event Name</label>
+        <Form.Control
           type="text"
           name="event_name"
-          style={{borderTopColor:'#FFF', borderRightColor:'#FFF', borderLeftColor:'#FFF'}}
+          style={{borderTopColor:'#FFF', borderRightColor:'#FFF', borderLeftColor:'#FFF', borderWidth:2, width:'80%'}}
           value={formik.values.event_name}
           onChange={formik.handleChange}
         />
@@ -44,48 +58,75 @@ function CardForm() {
           <p>{formik.errors.event_name}</p>
         )}
       </div>
-      <div>
-        <label>Email</label>
-        <input
+      <div className="card-form-container" >
+        <label className="label-form">Date</label>
+        <Form.Control
           type="date"
-          name="email"
-          value={formik.values.email}
+          name="date"
+          style={{borderTopColor:'#FFF', borderRightColor:'#FFF', borderLeftColor:'#FFF', borderWidth:2, width:'80%'}}
+          value={formik.values.date}
+          onChange={formik.handleChange}
+          />
+        {formik.errors.date && formik.touched.date && (
+          <p>{formik.errors.date}</p>
+          )}
+      </div>
+      <div style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
+      <div className="card-form-container">
+        <label className="label-form">Start Time</label>
+        <Form.Control
+          type="time"
+          name="start_time"
+          value={formik.values.start_time}
+          onChange={formik.handleChange}
+          />
+        {formik.errors.start_time && formik.touched.start_time && (
+          <p>{formik.errors.start_time}</p>
+          )}
+      </div >
+      <div className="card-form-container">
+        <label className="label-form">End Time</label>
+        <Form.Control
+          type="time"
+          name="end_time"
+          value={formik.values.end_time}
+          onChange={formik.handleChange}
+          />
+        {formik.errors.end_time && formik.touched.end_time && (
+          <p>{formik.errors.end_time}</p>
+          )}
+      </div>
+          </div>
+      <div className="card-form-container">
+        <label className="label-form">Description</label>
+        <Form.Control
+          type="text"
+          name="desc"
+          style={{borderTopColor:'#FFF', borderRightColor:'#FFF', borderLeftColor:'#FFF', borderWidth:2, width:'80%'}}
+          value={formik.values.desc}
           onChange={formik.handleChange}
         />
-        {formik.errors.email && formik.touched.email && (
-          <p>{formik.errors.email}</p>
+        {formik.errors.desc && formik.touched.desc && (
+          <p>{formik.errors.desc}</p>
         )}
       </div>
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-        />
-        {formik.errors.password && formik.touched.password && (
-          <p>{formik.errors.password}</p>
-        )}
-      </div>
-      <div>
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          name="confirm_password"
-          value={formik.values.confirm_password}
-          onChange={formik.handleChange}
-        />
-        {formik.errors.confirm_password && formik.touched.confirm_password && (
-          <p>{formik.errors.confirm_password}</p>
-        )}
-      </div>
-      <div>
-        <button type="submit">Submit</button>
+      <div style={{display:'flex', justifyContent:'space-around',marginTop:20}}>
+        <Button type="submit" buttonStyle="btn--outline" onClick={()=>HandleCrate()} >Create Event</Button>
+        <Button  buttonStyle="btn--outline" buttonColor="white">Cancel</Button>
+
       </div>
     </form>
+      
   </div>
   );
 }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      CreateEvent,
+    },
+    dispatch,
+  );
+}
 
-export default CardForm;
+export default connect(null,mapDispatchToProps)(CardForm);

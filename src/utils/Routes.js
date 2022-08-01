@@ -1,12 +1,12 @@
 import React from 'react'
 import {  Route, Switch, useLocation} from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
-import ListEvent from '../pages/ListEvent'
 
 import {AnimatePresence} from 'framer-motion'
+import Dashboard from '../pages/Dashboard'
 import CreateEvent from '../pages/CreateEvent'
+import ListEvent from '../pages/ListEvent'
 
-function AnimationRoute() {
+function Routes() {
     const location = useLocation()
   return (
     <AnimatePresence>
@@ -19,4 +19,4 @@ function AnimationRoute() {
   )
 }
 
-export default AnimationRoute;
+export default Routes

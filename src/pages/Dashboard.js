@@ -3,11 +3,12 @@ import { Background, bubbel1, bubbel2, Cal, CalIcon, FbIcon, IgIcon, TwitterIcon
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
+import '../asset/css/Dsahboard.css';
 
 export default class Dashboard extends Component {
   render() {
     return (
-      <>
+      <div>
         <Navbar />
         <motion.div
           style={{
@@ -26,13 +27,7 @@ export default class Dashboard extends Component {
           }}
         >
           <div
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              flex: 1,
-              alignContent: "center",
-              backgroundColor: "transparent",
-            }}
+           className="dash-container2"
           >
             <img
               src={bubbel1}
@@ -143,7 +138,7 @@ export default class Dashboard extends Component {
             />
           </div>
         </motion.div>
-      </>
+      </div>
     );
   }
 }

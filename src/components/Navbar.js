@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import {IoIosHome} from 'react-icons/io'
+import { FcElectricalSensor } from "react-icons/fc";
 import {FaBars, FaTimes} from 'react-icons/fa'
 import { Button } from './Button'
 import "../asset/css/Navbar.css"
@@ -24,7 +24,7 @@ function Navbar() {
     <div className='navbar'>
         <div className='navbar-container container'>
             <Link className="navbar-logo">
-                <IoIosHome className="navbar-icon"/> Wida Tech
+                <FcElectricalSensor className="navbar-icon"/> Wida Tech
             </Link>
             <div className='menu-icon' onClick={handleClick}>
             {click ? <FaTimes />: <FaBars />}

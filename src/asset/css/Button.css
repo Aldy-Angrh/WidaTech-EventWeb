@@ -68,10 +68,11 @@
     color: #FFF;
     border: none;
 }
-.red {
-    background-color: #f00946;
-    color: #FFF;
+.white {
+    background-color: #FFF;
+    color: #276afb;
     border: none;
+    font-weight: 600;
 }
 .primary {
     background-color: #242424;
