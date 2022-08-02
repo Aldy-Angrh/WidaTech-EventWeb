@@ -8,14 +8,12 @@ function CardTask() {
   const posts = useSelector((state) => state.posts.events);
   console.log("ISI STORE DI LIST EVENT ", posts);
   return (
-    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
+    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
       {posts.length !== 0 ? (
         posts.map((val) => {
           return (
             <Card className="list-card">
-              <Card.Body
-               className="list-card-body"
-              >
+              <Card.Body className="list-card-body">
                 <div style={{ flexDirection: "row", display: "flex" }}>
                   <div className="container-cardtask">
                     <Form>
@@ -33,18 +31,18 @@ function CardTask() {
                   </div>
                 </div>
                 <div className="container-link">
-                        <div className="container-linkGd">
-                          <div>
-                            <img src={GmeetIcon} className="img-task"/>
-                          </div>
-                          <div className="text-gmeet">Link To The Meeting</div>
-                        </div>
-                        <div className="container-linkGd">
-                        <div>
-                          <img src={GdriveIcon} className="img-task" />
-                        </div>
-                          <div>For Discussion</div>
-                        </div>
+                  <div className="container-linkGd">
+                    <div>
+                      <img src={GmeetIcon} className="img-task" />
+                    </div>
+                    <div className="text-gmeet">Link To The Meeting</div>
+                  </div>
+                  <div className="container-linkGd">
+                    <div>
+                      <img src={GdriveIcon} className="img-task" />
+                    </div>
+                    <div>For Discussion</div>
+                  </div>
                 </div>
               </Card.Body>
             </Card>

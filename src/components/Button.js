@@ -16,13 +16,9 @@ export const Button = ({
     ? buttonStyle
     : STYLES[0];
 
-    const checkButtonSize = SIZE.includes(buttonSize)
-    ? buttonSize
-    : SIZE[0];
+  const checkButtonSize = SIZE.includes(buttonSize) ? buttonSize : SIZE[0];
 
-    const checkButtonColor= COLOR.includes(buttonColor)
-    ? buttonColor
-    : COLOR[0];
+  const checkButtonColor = COLOR.includes(buttonColor) ? buttonColor : COLOR[0];
   return (
     <button
       className={`brn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}`}

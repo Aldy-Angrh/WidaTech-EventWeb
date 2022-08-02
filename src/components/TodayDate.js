@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import '../asset/css/ListEvent.css'
-import { EventCalIcon } from '../asset/image/Index'
-import { GetCurrentDate, GetCurrentTime } from '../utils/Utils'
+import React, { Component } from "react";
+import "../asset/css/ListEvent.css";
+import { EventCalIcon } from "../asset/image/Index";
+import { GetCurrentDate, GetCurrentTime } from "../utils/Utils";
 
 export class TodayDate extends Component {
   render() {
     return (
-        <div className="cont-date">
+      <div className="cont-date">
         <div>
           <img src={EventCalIcon} className="img-date" />
         </div>
@@ -19,8 +19,8 @@ export class TodayDate extends Component {
           <text className="text-value">{GetCurrentTime()}</text>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default TodayDate
+export default TodayDate;

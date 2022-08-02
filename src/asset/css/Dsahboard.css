@@ -30,7 +30,10 @@
 .dash-bg{
     width: 90;
     height:100vh;
-    position: absolute;    
+    position: absolute;
+    z-index: 100;
+    top: 0;  
+
   }
 .dash-bg2{
     width: 110vh;

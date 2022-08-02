@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { Background, bubbel1, bubbel2, Cal, CalIcon, FbIcon, IgIcon, TwitterIcon } from "../asset/image/Index";
+import {
+  bubbel1,
+  bubbel2,
+  CalIcon,
+  FbIcon,
+  IgIcon,
+  TwitterIcon,
+} from "../asset/image/Index";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
-import '../asset/css/Dsahboard.css';
+import "../asset/css/Dsahboard.css";
 
 export default class Dashboard extends Component {
   render() {
@@ -26,9 +33,7 @@ export default class Dashboard extends Component {
             transition: { duration: 1, ease: "linear", delay: 0.5 },
           }}
         >
-          <div
-           className="dash-container2"
-          >
+          <div className="dash-container2">
             <img
               src={bubbel1}
               style={{ width: "90vh", height: "100vh", position: "absolute" }}
@@ -101,7 +106,7 @@ export default class Dashboard extends Component {
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: "transparent",
-                  paddingLeft:60
+                  paddingLeft: 60,
                 }}
               >
                 <p
@@ -117,10 +122,22 @@ export default class Dashboard extends Component {
                   natoque penatibus et magnis dis parturient montes,
                 </p>
                 <Button buttonStyle="btn--outline">Learn More</Button>
-                <div style={{display:'flex', flexDirection:'row', marginTop: 80}}>
-                    <img src={IgIcon} style={{width:'50px', height:'50px', marginRight:30}}/>
-                    <img src={TwitterIcon} style={{width:'50px', height:'50px', marginRight:29}}/>
-                    <img src={FbIcon} style={{width:'50px', height:'50px'}}/>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    marginTop: 80,
+                  }}
+                >
+                  <img
+                    src={IgIcon}
+                    style={{ width: "50px", height: "50px", marginRight: 30 }}
+                  />
+                  <img
+                    src={TwitterIcon}
+                    style={{ width: "50px", height: "50px", marginRight: 29 }}
+                  />
+                  <img src={FbIcon} style={{ width: "50px", height: "50px" }} />
                 </div>
               </div>
             </div>
