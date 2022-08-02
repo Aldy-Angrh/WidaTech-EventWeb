@@ -6,9 +6,8 @@ import { GdriveIcon, GmeetIcon } from "../asset/image/Index";
 
 function CardTask() {
   const posts = useSelector((state) => state.posts.events);
-  console.log("ISI STORE DI LIST EVENT ", posts);
   return (
-    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
       {posts.length !== 0 ? (
         posts.map((val) => {
           return (
@@ -24,6 +23,7 @@ function CardTask() {
                       ))}
                     </Form>
                   </div>
+                        
                   <div className="container-cardtask">
                     <text className="list-text-event">{val.event_name}</text>
                     <text className="list-Link">{`${val.start_time} - ${val.end_time}`}</text>
@@ -41,7 +41,7 @@ function CardTask() {
                     <div>
                       <img src={GdriveIcon} className="img-task" />
                     </div>
-                    <div>For Discussion</div>
+                    <div className="text-gmeet">For Discussion</div>
                   </div>
                 </div>
               </Card.Body>

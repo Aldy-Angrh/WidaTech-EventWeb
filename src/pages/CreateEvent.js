@@ -12,7 +12,7 @@ class CreateEvent extends Component {
       <div className="listEvent">
         <Sidebar />
         <div style={{ paddingLeft: 80 }}>
-          <p className="list-p">Morning Aldy Anugrah!</p>
+          <p className="list-nickname">Morning Aldy Anugrah!</p>
           <div className="cont-date">
             <div
               style={{
@@ -25,15 +25,16 @@ class CreateEvent extends Component {
                 display: "flex",
               }}
             >
-              <img src={CreateIcon} className="img-date" />
+              <img src={CreateIcon} className="img-create" />
             </div>
             <text
               style={{
                 fontWeight: "bold",
                 color: "#192049",
-                fontSize: 20,
+                fontSize: '20px',
                 marginLeft: 30,
                 marginTop: 15,
+                textDecoration:'underline'
               }}
             >
               Create New Event

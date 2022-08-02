@@ -55,10 +55,12 @@ h2 {
 .cont-date {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .img-date {
     width: 60px;
+    height: 60px;
 }
 
 .container-today {
@@ -72,11 +74,18 @@ h2 {
     flex-direction: column;
 }
 
-.list-p {
+.list-nickname {
     color: #192049;
     font-weight: bold;
     font-size: 40px;
     text-decoration-line: underline;
+}
+.list-p {
+    color: #192049;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration-line: underline;
+    margin-top: 10px;
 }
 
 .text-value {
@@ -87,7 +96,7 @@ h2 {
 }
 
 .list-card {
-    width: 40%;
+    width: 30%;
     background-color: #14162D;
     border-radius: 20px;
     box-shadow: -13px 14px 26px -4px rgba(0, 0, 0, 0.68);
@@ -135,4 +144,8 @@ h2 {
 .text-gmeet {
     border-radius: 20px;
     padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+
+    
 }
