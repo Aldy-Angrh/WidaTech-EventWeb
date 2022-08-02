@@ -1,3 +1,8 @@
+# Event Web
+Event Web is a web-based application for managing upcoming events or task lists
+
+This website is built with React Js library, redux thunk as state management, formic for validation
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
